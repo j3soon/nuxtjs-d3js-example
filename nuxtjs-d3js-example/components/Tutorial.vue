@@ -16,6 +16,7 @@
         <p class="mt-4 pt-4 text-gray-800 border-t border-dashed">
           To get started, remove <code class="bg-gray-100 text-sm p-1 rounded border">components/Tutorial.vue</code> and start coding in <code class="bg-gray-100 text-sm p-1 rounded border">pages/index.vue</code>. Have fun!
         </p>
+        <p id="d3-target"></p>
       </div>
       <div class="flex justify-center pt-4 space-x-2">
         <a href="https://github.com/nuxt/nuxt.js" target="_blank"><svg
@@ -46,7 +47,11 @@
 </template>
 
 <script>
+import * as d3 from 'd3'
 export default {
-  name: 'NuxtTutorial'
+  name: 'NuxtTutorial',
+  mounted: function() {
+    d3.select("#d3-target").text("This text is manipulated by d3.js")
+  },
 }
 </script>
